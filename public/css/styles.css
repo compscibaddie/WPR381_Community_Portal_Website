@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body Styling */
+  body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Header / Navbar */
+  header {
+    background-color: #004466;
+    color: white;
+    padding: 1rem 2rem;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  nav ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Container */
+  .container {
+    flex: 1;
+    padding: 2rem;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #004466;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  /* Forms */
+  form {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  form input, form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  form button {
+    background-color: #004466;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  form button:hover {
+    background-color: #006699;
+  }
+  
+  /* Events Page Cards */
+  .event-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .event-card img {
+    max-width: 150px;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .event-card .details {
+    flex: 1;
+  }
+
+  .thank-you-container {
+  text-align: center;
+  padding: 50px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  margin: 20px;
+}
+
+.thank-you-message {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2e8b57;
+  margin-top: 20px;
+}
+
+.thank-you-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.thank-you-button:hover {
+  background-color: #45a049;
+}
