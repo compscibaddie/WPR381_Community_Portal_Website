@@ -1,10 +1,26 @@
-<%- include('../partials/header') %>
+<%- include('../partials/header', { title: 'About Us' }) %>
+<div class="wrapper">
+  <main class="container">
+  <h1>About Our Community Portal</h1>
+  <p>
+    Welcome to the Community Portal – a digital space where neighbors connect, collaborate, and celebrate local life.
+    Whether you're looking for upcoming events, local news, or ways to get involved, this is your go-to hub for all things community.
+  </p>
 
-<h1>About Us</h1>
-<ul>
-  <% team.forEach(member => { %>
-    <li><strong><%= member.name %></strong> – <%= member.role %></li>
-  <% }) %>
-</ul>
+  <p>
+    Our mission is to bring people together through shared interests, helpful resources, and meaningful events.
+    We believe in fostering connection, supporting each other, and creating a vibrant, inclusive neighborhood where everyone feels at home.
+  </p>
 
-<%- include('../partials/footer') %>
+  <h2>Meet the Team</h2>
+  <p>We're a passionate group of individuals working behind the scenes to keep this portal alive and thriving:</p>
+
+  <ul class="team-list">
+    <% team.forEach(member => { %>
+      <li><strong><%= member.name %></strong> – <%= member.role %></li>
+    <% }) %>
+  </ul>
+</main>
+
+  <%- include('../partials/footer') %>
+</div>

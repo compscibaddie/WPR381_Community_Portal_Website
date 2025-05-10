@@ -6,10 +6,10 @@ let contactSubmissions = [];
 
 // Sample data
 const teamInfo = [
-  { name: 'Alice', role: 'Team Lead' },
-  { name: 'Bob', role: 'Frontend Developer' },
-  { name: 'Charlie', role: 'Backend Developer' },
-  { name: 'Dana', role: 'Data Manager' }
+  { name: 'Anele Nkayi', role: 'Team Lead' },
+  { name: 'Jan Saayman', role: 'Frontend Developer' },
+  { name: 'Itumeleng Kekana', role: 'Backend Developer' },
+  { name: 'Tiisetso Keraetswe', role: 'Data Manager' }
 ];
 
 const events = [
@@ -27,26 +27,34 @@ const events = [
   }
 ];
 
-// Routes
-
-// Home
 router.get('/', (req, res) => {
-  res.render('pages/home', { title: 'Home' });
+  res.render('pages/home', { 
+    currentPage: 'home',
+    title: 'Home - Community Portal'
+  });
 });
 
-// About
 router.get('/about', (req, res) => {
-  res.render('pages/about', { title: 'About Us', team: teamInfo });
+  res.render('pages/about', { 
+    currentPage: 'about',
+    title: 'About Us - Community Portal',
+    team: teamInfo
+  });
 });
 
-// Events
 router.get('/events', (req, res) => {
-  res.render('pages/events', { title: 'Events', events });
+  res.render('pages/events', { 
+    currentPage: 'events',
+    title: 'Events - Community Portal',
+    events: events
+  });
 });
 
-// Contact
 router.get('/contact', (req, res) => {
-  res.render('pages/contact', { title: 'Contact Us' });
+  res.render('pages/contact', { 
+    currentPage: 'contact',
+    title: 'Contact Us - Community Portal'
+  });
 });
 
 router.post('/contact', (req, res) => {
@@ -55,7 +63,6 @@ router.post('/contact', (req, res) => {
   res.redirect('/thankyou');
 });
 
-// Thank You
 router.get('/thankyou', (req, res) => {
   res.render('pages/thankyou', { title: 'Thank You' });
 });
