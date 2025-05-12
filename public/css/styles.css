@@ -109,6 +109,76 @@
     text-decoration: underline; 
   }
   
+  .welcome-description {
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: center;
+    color: #444;
+  }
+
+  .welcome-description h1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .More {
+    display: inline-block;
+    justify-content: center;
+    margin-top: 1.5rem;
+    margin-bottom: 20px;
+    text-decoration: none;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .More:hover {
+    background-color: #0056b3;
+  }
+  .centerView {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  .upcoming-events {
+    text-align: center;
+  }
+  
+  .events-holders {
+    display: flex;
+    flex-wrap: row;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  .event-cards {
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .event-cards:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(63, 151, 252, 0.2);
+  }
+  
+  .event-cards img {
+    width: 100%;
+    border-radius: 8px;
+    height: 160px;
+    object-fit: cover;
+  }
+  
+
   /* Forms */
   form {
     background-color: white;

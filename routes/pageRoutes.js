@@ -30,7 +30,8 @@ const events = [
 router.get('/', (req, res) => {
   res.render('pages/home', { 
     currentPage: 'home',
-    title: 'Home - Community Portal'
+    title: 'Home - Community Portal',
+    events : events
   });
 });
 
