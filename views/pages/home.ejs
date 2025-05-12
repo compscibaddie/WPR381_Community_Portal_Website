@@ -2,8 +2,31 @@
 
 <div class="wrapper">
   <main>
+    <div class="welcome-description">
     <h1>Welcome to the Community Portal</h1>
-    <p>This is a placeholder for upcoming events.</p>
+    <p>
+      Our community portal is a dynamic platform designed to keep you connected, informed, and engaged. 
+      From upcoming events to direct communication, this portal allows members to interact seamlessly, 
+      discover new opportunities, and contribute to a growing network of shared interests.
+    </p>
+    </div>
+    <section>
+      <h2 class="upcoming-events">Upcoming events</h2>
+
+      <div class="events-holders">
+        <% events.slice(0,3).forEach(event => { %>
+        <div class="event-cards">
+          <img src="<%= events.image%>" alt="<%= events.title %>">
+          <h3><%= event.title %></h3>
+          <p><%= event.date %> || <%= event.location %></p>
+        </div> 
+      <% }) %>
+      </div>
+      <div class="centerView">
+        <a href="/events" class="More">View More</a>
+      </div>
+      
+    </section>
   </main>
 
 
