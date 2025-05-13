@@ -230,7 +230,6 @@ form button:hover {
 }
 
 .container {
-  padding: 0% 6% 6% 6%;
   display: grid;
   place-items: center;
   grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
