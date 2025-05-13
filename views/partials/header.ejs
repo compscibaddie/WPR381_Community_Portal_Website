@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title><%= title %></title>
   <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="preload" as="image" href="/images/community-bg.jpg">
   <script src="/public/js/script.js"></script>
 </head>
 <body>
@@ -14,11 +16,12 @@
   </div>
   <nav>
     <ul id="menu">
-      <li><a href="/" class="<%= currentPage === 'home' ? 'active' : '' %>">Home</a></li>
-      <li><a href="/about" class="<%= currentPage === 'about' ? 'active' : '' %>">About</a></li>
-      <li><a href="/events" class="<%= currentPage === 'events' ? 'active' : '' %>">Events</a></li>
-      <li><a href="/contact" class="<%= currentPage === 'contact' ? 'active' : '' %>">Contact</a></li>
+      <li><a href="/" class="<%= currentPage === 'home' ? 'active' : '' %>"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="/about" class="<%= currentPage === 'about' ? 'active' : '' %>"><i class="fas fa-info-circle"></i> About</a></li>
+      <li><a href="/events" class="<%= currentPage === 'events' ? 'active' : '' %>"><i class="fas fa-calendar-alt"></i> Events</a></li>
+      <li><a href="/contact" class="<%= currentPage === 'contact' ? 'active' : '' %>"><i class="fas fa-envelope"></i> Contact</a></li>
     </ul>
   </nav>
 </header>
-  <main>
+  <main class="background-image">
+  
