@@ -1,21 +1,30 @@
 <%- include('../partials/header', { title: 'Events' }) %>
+
 <div class="wrapper">
-<div class="container">
+  <form method="GET" action="/events" class="search-form">
+    <input type="text" name="search" placeholder="Search events..." value="<%= typeof search !== 'undefined' ? search : '' %>" autocomplete="off">
+    <button type="submit">Search</button>
+  </form>
   <h1>Upcoming Events</h1>
+<div class="container">
 
   <% if (events && events.length > 0) { %>
     <% events.forEach(event => { %>
-      <div class="event-card">
-        <img src="<%= event.image %>" alt="<%= event.title %> image">
+      <a href="<%= event.link %>" class="event-card">
+        <div class="image-wrapper">
+          <img src="<%= event.image %>" alt="<%= event.title %> image">
+        </div>
         <div class="details">
           <h2><%= event.title %></h2>
-          <p><strong>Date:</strong> <%= event.date %></p>
-          <p><strong>Location:</strong> <%= event.location %></p>
+          <div class="meta">
+            <p><%= event.location %></p>
+            <p><%= event.date %></p>
+          </div>
         </div>
-      </div>
+      </a>
     <% }) %>
   <% } else { %>
-    <p>No events to display at the moment.</p>
+    <p class="no-events">No '<%= search %>' events were found.</p>
   <% } %>
 </div>
 

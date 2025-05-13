@@ -16,10 +16,10 @@
       <div class="events-holders">
         <% events.slice(0,3).forEach(event => { %>
         <div class="event-cards">
-          <img src="<%= events.image%>" alt="<%= events.title %>">
+          <img src="<%= event.image%>" alt="<%= event.title %>">
           <h3><%= event.title %></h3>
           <p><%= event.date %> || <%= event.location %></p>
-        </div> 
+        </div>
       <% }) %>
       </div>
       <div class="centerView">
