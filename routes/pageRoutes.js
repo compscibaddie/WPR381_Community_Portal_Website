@@ -157,7 +157,9 @@ router.post('/contact', (req, res) => {
 });
 
 router.get('/thankyou', (req, res) => {
-  res.render('pages/thankyou', { title: 'Thank You' });
+  res.render('pages/thankyou', { 
+    currentPage: 'thankyou', 
+    title: 'Thank You' });
 });
 
 module.exports = router;
