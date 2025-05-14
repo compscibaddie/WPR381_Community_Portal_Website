@@ -6,7 +6,7 @@ let contactSubmissions = [];
 
 // Sample data
 const teamInfo = [
-  { name: 'Anele Nkayi', role: 'Team Leader' },
+  { name: 'Anele Nkayi', role: 'Team Lead' },
   { name: 'Jan Saayman', role: 'Frontend Developer' },
   { name: 'Itumeleng Kekana', role: 'Backend Developer' },
   { name: 'Tiisetso Keraetswe', role: 'Data Manager' }
@@ -130,17 +130,27 @@ router.get('/about', (req, res) => {
 router.get('/events', (req, res) => {
   const searchQuery = req.query.search?.toLowerCase() || '';
 
-  const filteredEvents = events.filter(event =>
+  const today = new Date();
+  today.setHours(0, 0, 0, 0); // Normalize to start of day for comparison
+
+  // Filter out past events (keep events on or after today)
+  const activeEvents = events.filter(event => {
+    const eventDate = new Date(event.date);
+    eventDate.setHours(0, 0, 0, 0); // Normalize event date
+    return eventDate >= today;
+  });
+
+  const filteredEvents = activeEvents.filter(event =>
     event.title.toLowerCase().includes(searchQuery)
   );
 
-   // Sort by date (soonest first)
+  // Sort by date (soonest first)
   filteredEvents.sort((a, b) => new Date(a.date) - new Date(b.date));
 
   res.render('pages/events', { 
     currentPage: 'events',
     title: 'Events - Community Portal',
-    u_events: events,
+    u_events: activeEvents,
     events: filteredEvents,
     search: req.query.search, // send it back to keep input filled
     user: req.session.user 

@@ -10,7 +10,7 @@ This project involve the development of a dynamic Community Portal Website using
 * **Database:** Mongoose
 
 ## Team Members and Roles
-* **Team Lead:** Anele Nyaki
+* **Team Lead:** Anele Nkayi
 * **Frontend Developer:** Jan Fredrik Cronje Saayman
 * **Backend Developer:** Itumeleng Kekana
 * **Data Manager:** Tiisetso Keraetswe
