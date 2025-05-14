@@ -16,6 +16,13 @@
   </div>
   <nav>
     <ul id="menu">
+      <% if (user) { %>
+        <li>Welcome, <%= user.name %></li>
+        <li><a href="/logout">Logout</a></li>
+      <% } else { %>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/signup">Sign Up</a></li>
+      <% } %>
       <li><a href="/" class="<%= currentPage === 'home' ? 'active' : '' %>"><i class="fas fa-home"></i> Home</a></li>
       <li><a href="/about" class="<%= currentPage === 'about' ? 'active' : '' %>"><i class="fas fa-info-circle"></i> About</a></li>
       <li><a href="/events" class="<%= currentPage === 'events' ? 'active' : '' %>"><i class="fas fa-calendar-alt"></i> Events</a></li>
