@@ -108,6 +108,125 @@
   footer a:hover {
     text-decoration: underline; 
   }
+  .welcome{
+    color: #ffff;
+  }
+  .background-main{
+    position: relative;
+    background: url('/images/Background.jpg') no-repeat center center;
+    background-size: cover;
+    z-index: 0;
+    padding: 2rem;
+  }
+  .background-main::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color:rgba(0, 0, 0, 0.6); 
+    z-index: -1;
+  }
+  .search-container {
+    position: relative;
+    max-width: 600px;
+    margin: 1rem auto 2rem auto;
+  }
+  
+  #searchInput {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 1rem;
+    background-color: white;
+    outline: none;
+  }
+  
+  .suggestion-box {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    z-index: 10;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+  }
+  
+  .suggestion-box div {
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+  }
+  
+  .suggestion-box div:hover {
+    background-color: #f1f1f1;
+  }
+  .welcome-description {
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: center;
+    color: #ffffff;
+  }
+  .More {
+    display: inline-block;
+    justify-content: center;
+    margin-top: 1.5rem;
+    margin-bottom: 20px;
+    text-decoration: none;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .More:hover {
+    background-color: #0056b3;
+  }
+  .centerView {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  .upcoming-events {
+    text-align: center;
+    color: #ffff;
+  }
+  
+  .events-holders {
+    display: flex;
+    flex-wrap: row;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  .event-cards {
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .event-cards:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(63, 151, 252, 0.2);
+  }
+  
+  .event-cards img {
+    width: 100%;
+    border-radius: 8px;
+    height: 160px;
+    object-fit: cover;
+  }
+  
   
   /* Forms */
   form {

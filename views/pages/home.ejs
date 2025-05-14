@@ -1,11 +1,87 @@
 <%- include('../partials/header') %>
 
 <div class="wrapper">
-  <main>
-    <h1>Welcome to the Community Portal</h1>
-    <p>This is a placeholder for upcoming events.</p>
+  <main class="HomeMain background-main" >
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Search for pages or events..." autocomplete="off" />
+      <div id="suggestions" class="suggestion-box">
+        <div>Home</div>
+        <div>About</div>
+        <div>Events</div>
+        <div>Contact</div>
+        <div>Thank You</div>
+        <% events.slice(0, 3).forEach(event => { %>
+          <div><%= event.title %></div>
+        <% }) %>
+      </div>
+    </div>
+    
+    <h1 class="welcome">Welcome to the Community Portal</h1>
+    <p class="welcome-description">
+      Our community portal is a dynamic platform designed to keep you connected, informed, and engaged. 
+      From upcoming events to direct communication, this portal allows members to interact seamlessly, 
+      discover new opportunities, and contribute to a growing network of shared interests.
+    </p>
+    <section>
+      <h2 class="upcoming-events">Upcoming events</h2>
+
+      <div class="events-holders">
+        <% events.slice(0,3).forEach(event => { %>
+        <div class="event-cards">
+          <img src="<%= events.image%>" alt="<%= events.title %>">
+          <h3><%= event.title %></h3>
+          <p><%= event.date %> || <%= event.location %></p>
+        </div> 
+      <% }) %>
+      </div>
+      <div class="centerView">
+        <a href="/events" class="More">View More</a>
+      </div>
+      
+    </section>
   </main>
 
 
 <%- include('../partials/footer') %>
 </div>
+<script>
+  const searchInput = document.getElementById('searchInput');
+  const suggestionBox = document.getElementById('suggestions');
+  const suggestionItems = Array.from(suggestionBox.children);
+
+  searchInput.addEventListener('input', () => {
+    const query = searchInput.value.toLowerCase();
+    let hasMatch = false;
+
+    suggestionItems.forEach(item => {
+      const match = item.textContent.toLowerCase().includes(query);
+      item.style.display = match ? 'block' : 'none';
+      if (match) hasMatch = true;
+    });
+
+    suggestionBox.style.display = hasMatch && query ? 'block' : 'none';
+  });
+
+  suggestionItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const value = item.textContent;
+      searchInput.value = value;
+      suggestionBox.style.display = 'none';
+
+      const target = value.toLowerCase().replace(/\s+/g, '');
+      const validPages = ['home', 'about', 'events', 'contact', 'thankyou'];
+      if (validPages.includes(target)) {
+        window.location.href = '/' + target;
+      }
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!searchInput.contains(e.target) && !suggestionBox.contains(e.target)) {
+      suggestionBox.style.display = 'none';
+    }
+  });
+</script>
+
+
+
