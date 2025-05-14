@@ -106,6 +106,7 @@ const events = [
     image: 'images/pic12.jpg',
     link: 'https://computicket.com/event/pretoria_jolly_picnic_saturday_/ce15d0c5-e974-427b-a01c-fde571aeeb21'
   },
+  
 ];
 
 router.get('/', (req, res) => {

@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
-<div class="content-card">
+<div class="content-carder">
 <div class="wrapper">
-<<<<<<< HEAD
+
   <main class="HomeMain background-main" >
     <div class="search-container">
       <input type="text" id="searchInput" placeholder="Search for pages or events..." autocomplete="off" />
@@ -16,40 +16,26 @@
         <% }) %>
       </div>
     </div>
-    
-    <h1 class="welcome">Welcome to the Community Portal</h1>
-    <p class="welcome-description">
-=======
-  
     <div class="welcome-description">
     <h1>Welcome to the Community Portal</h1>
     <p>
->>>>>>> 83cb2f685326d7b20ce4e6e3405bf857deab741b
       Our community portal is a dynamic platform designed to keep you connected, informed, and engaged. 
       From upcoming events to direct communication, this portal allows members to interact seamlessly, 
       discover new opportunities, and contribute to a growing network of shared interests.
     </p>
-<<<<<<< HEAD
-=======
     </div>
->>>>>>> 83cb2f685326d7b20ce4e6e3405bf857deab741b
     <section>
       <h2 class="upcoming-events">Upcoming events</h2>
 
       <div class="events-holders">
         <% events.slice(0,3).forEach(event => { %>
+          <a href="/events" class="event-link">
         <div class="event-cards">
-<<<<<<< HEAD
-          <img src="<%= events.image%>" alt="<%= events.title %>">
-          <h3><%= event.title %></h3>
-          <p><%= event.date %> || <%= event.location %></p>
-        </div> 
-=======
           <img src="<%= event.image%>" alt="<%= event.title %>">
           <h3><%= event.title %></h3>
           <p><%= event.date %> || <%= event.location %></p>
-        </div>
->>>>>>> 83cb2f685326d7b20ce4e6e3405bf857deab741b
+        </div> 
+      </a>
       <% }) %>
       </div>
       <div class="centerView">
@@ -57,14 +43,10 @@
       </div>
       
     </section>
-<<<<<<< HEAD
-=======
   </div>
->>>>>>> 83cb2f685326d7b20ce4e6e3405bf857deab741b
   </main>
 
 </div>
-<<<<<<< HEAD
 <script>
   const searchInput = document.getElementById('searchInput');
   const suggestionBox = document.getElementById('suggestions');
@@ -105,7 +87,6 @@
 </script>
 
 
-=======
+
 <%- include('../partials/footer') %>
->>>>>>> 83cb2f685326d7b20ce4e6e3405bf857deab741b
 

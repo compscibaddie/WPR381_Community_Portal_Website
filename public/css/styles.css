@@ -61,6 +61,14 @@ header .logo a {
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
+.content-carder {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  max-width: 1200px;
+  min-width: 80%;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
 
 .wide-events {
   max-width: 1400px;
@@ -134,7 +142,7 @@ footer a {
   }
   .background-main{
     position: relative;
-    background: url('/images/Background.jpg') no-repeat center center;
+    background: url('/images/logo.png') no-repeat center center;
     background-size: cover;
     z-index: 0;
     padding: 2rem;
@@ -143,8 +151,9 @@ footer a {
     content: "";
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background-color:rgba(0, 0, 0, 0.6); 
+    background-color:rgba(0, 0, 0, 0.8); 
     z-index: -1;
+    color: #f1f1f1;
   }
   .search-container {
     position: relative;
@@ -192,6 +201,15 @@ footer a {
     line-height: 1.6;
     text-align: center;
     color: #ffffff;
+    position: relative;
+    z-index: 1;
+    padding: 2rem 1rem;
+    transition: transform 0.4s ease, color 0.4s ease;
+  }
+  .welcome-description:hover {
+    transform: scale(1.02);
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
   }
   .More {
     display: inline-block;
@@ -221,10 +239,13 @@ footer a {
   
   .events-holders {
     display: flex;
-    flex-wrap: row;
+    flex-direction: row;
     justify-content: center;
-    gap: 1.5rem;
+    align-items: stretch;
+    gap: 1.5rem; /* space between cards */
+    flex-wrap: wrap; /* allows cards to move to next line on small screens */
     margin-top: 1rem;
+    padding: 1rem 0;
   }
   .event-cards {
     background-color: #f9f9f9;
