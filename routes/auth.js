@@ -59,12 +59,20 @@ router.post('/login', async (req, res) => {
   try {
     const user = await User.findOne({ email });
     if (!user) {
-      return res.render('login', { error: 'User not found' });
+      return res.render('login', {
+        title: 'Login',
+        error: 'Account not found. Please sign up.',
+        currentPage: 'login'
+      });
     }
 
     const match = await bcrypt.compare(password, user.password);
     if (!match) {
-      return res.render('login', { error: 'Incorrect password' });
+      return res.render('login', {
+        title: 'Login',
+        currentPage: 'login',
+        error: 'Invalid username or password'
+      });
     }
 
     // Success - store user in session
@@ -72,7 +80,10 @@ router.post('/login', async (req, res) => {
     res.redirect('/');
   } catch (err) {
     console.error('Login error:', err);
-    res.render('login', { error: 'Something went wrong' });
+    res.render('login', { 
+        title: 'Login',
+        currentPage: 'login',
+        error: 'Something went wrong. Please try again' });
   }
 });
 
