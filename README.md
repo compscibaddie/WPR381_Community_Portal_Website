@@ -23,6 +23,5 @@ This project involve the development of a dynamic Community Portal Website using
 4. Add your own route handlers and middleware as needed.
 5. Open in browser
 
-## Screenshots
 ## Reflection
 This project allowed for the comprehensive use of GitHub, and how version control can help keep track of the progress being made within the project. Concepts covered in class such as Page Route were able to be practically implemented. Learning to identify functionality gaps in the website helped to improve the quality of the website that is being presented.  
