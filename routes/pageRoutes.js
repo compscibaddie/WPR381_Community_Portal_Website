@@ -112,7 +112,8 @@ router.get('/', (req, res) => {
   res.render('pages/home', { 
     currentPage: 'home',
     title: 'Home - Community Portal',
-    events : events
+    events : events, 
+    user: req.session.user
   });
 });
 
@@ -120,7 +121,8 @@ router.get('/about', (req, res) => {
   res.render('pages/about', { 
     currentPage: 'about',
     title: 'About Us - Community Portal',
-    team: teamInfo
+    team: teamInfo, 
+    user: req.session.user
   });
 });
 
@@ -139,14 +141,16 @@ router.get('/events', (req, res) => {
     title: 'Events - Community Portal',
     u_events: events,
     events: filteredEvents,
-    search: req.query.search // send it back to keep input filled
+    search: req.query.search, // send it back to keep input filled
+    user: req.session.user 
   });
 });
 
 router.get('/contact', (req, res) => {
   res.render('pages/contact', { 
     currentPage: 'contact',
-    title: 'Contact Us - Community Portal'
+    title: 'Contact Us - Community Portal', 
+    user: req.session.user
   });
 });
 
@@ -159,7 +163,8 @@ router.post('/contact', (req, res) => {
 router.get('/thankyou', (req, res) => {
   res.render('pages/thankyou', { 
     currentPage: 'thankyou', 
-    title: 'Thank You' });
+    title: 'Thank You', 
+    user: req.session.user });
 });
 
 module.exports = router;
