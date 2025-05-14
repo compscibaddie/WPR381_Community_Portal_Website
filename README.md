@@ -2,7 +2,7 @@
 
 ## Overview
 This project involve the development of a dynamic Community Portal Website using Node.js, Express.js, and EJS. The website consists of five main pages: Home, About, Events, Contact, and Thank You. The goal is to create a fully function web application with dynamic pages, templating using partials, and a clean, readable codebase. The Contact page will include a simple form to collect user information, which will be temporarily stored.
-**GitHub Repository:**https://github.com/compscibaddie/WPR381_Community_Portal_Website
+* **GitHub Repository:**https://github.com/compscibaddie/WPR381_Community_Portal_Website
 
 ## Technologies Used
 * **Backend Environment:** Node.js
